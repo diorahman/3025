@@ -1,0 +1,17 @@
+#!/bin/bash
+
+function test() {
+  rm -fr *.txt
+  echo "$1" > input.txt
+  ./app input.txt
+  output=`cat output.txt`
+  expected="$2"
+  if [[ "$output" == "$expected" ]]; then
+    echo "$1 -> OK"
+  else
+    echo "ERR $expected vs. $output"
+  fi
+}
+
+test 2 "00, 01, dan 81"
+test 4 "0000, 0001, 0081, 0100, 2025, 3025, dan 9801"
