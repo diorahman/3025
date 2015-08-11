@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
 
   number = 0;
   count = 0;
-  while(number < pow(10, digit)) {
+  while (number < pow(10, digit)) {
     divider = number > 0 ? pow(10, ((int) floor (log10(number) + 1))/2) : 10;
     part = number / divider + number % divider;
     if (number == part * part) {
@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
     number++;
   }
   
-  for(i = 0; i < count; i++) {
+  for (i = 0; i < count; i++) {
     fprintf(fp, "%0*d", digit, numbers[i]);
     if (count > 1) {
       if (i < count - 1) {
