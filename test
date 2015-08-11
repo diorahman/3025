@@ -1,17 +1,20 @@
 #!/bin/bash
 
 function test() {
+  expected="$2"
+  digits="$1"
+  echo "should get \"ajaib\" numbers with $digits digits: $expected"
   rm -fr *.txt
   echo "$1" > input.txt
   ./app input.txt
   output=`cat output.txt`
-  expected="$2"
   if [[ "$output" == "$expected" ]]; then
-    echo "$1 -> OK"
+    echo "  $1 -> OK"
   else
-    echo "ERR $expected vs. $output"
+    echo "  ERR $expected vs. $output"
   fi
 }
 
+test 1 ""
 test 2 "00, 01, dan 81"
 test 4 "0000, 0001, 0081, 0100, 2025, 3025, dan 9801"
