@@ -1,10 +1,9 @@
 # 3025 ajaib
 
-## build and run
+## build and run tests
 
 ```
-$ make
-$ make test
+$ make && make test
 ```
 
 Dhi Aurrahman <diorahman@rockybars.com>
